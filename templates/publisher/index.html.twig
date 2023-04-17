@@ -1,0 +1,12 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Publishers{% endblock %}
+
+{% block content %}
+    <h1>Издатели</h1>
+    <div class="mb-3">
+        {% for publisher in publishers %}
+            <h2><a href="{{ path('publisher_show', { 'id': publisher.id }) }}">{{ publisher.name }}</a></h2>
+        {% endfor %}
+    </div>
+{% endblock %}

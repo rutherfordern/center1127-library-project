@@ -1,0 +1,30 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-nowrap">
+            <thead class="table-light">
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Книги</th>
+            </tr>
+                <tr>
+                    <td>{{ author.FirstName }}</a></td>
+                    <td> {{ author.LastName }} </td>
+                    <td>
+                        {% for book in author.books %}
+                            <br>
+                            {{ book.name }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <form action="{{ path('author_delete', {id: author.id}) }}" method="POST">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <button type="submit" class="btn btn-danger mt-3">Удалить автора</button>
+    </form>
+{% endblock %}

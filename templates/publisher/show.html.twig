@@ -1,0 +1,36 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-nowrap">
+            <thead class="table-light">
+            <tr>
+                <th>Название</th>
+                <th>Адрес</th>
+                <th>Книги</th>
+            </tr>
+            <tr>
+                <td>{{ publisher.name }}</a></td>
+                <td> {{ publisher.address }} </td>
+                <td>
+                    {% for book in publisher.books %}
+                        <br>
+                        {{ book.name }}
+                    {% endfor %}
+                </td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="...">
+        <a href="{{ path('publisher_edit', {id: publisher.id}) }}" class="btn btn-success mx-2">Обновить издателя</a>
+
+        <form action="{{ path('publisher_delete', {id: publisher.id}) }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button type="submit" class="btn btn-danger mx-2">Удалить издателя</button>
+        </form>
+    </div>
+
+
+{% endblock %}

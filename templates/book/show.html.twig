@@ -1,0 +1,15 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block content %}
+    <h2>{{ book.name }}</h2>
+    {% for author in book.authors %}
+        <div>Автор: {{ author.firstName }} {{ author.lastName }}</div>
+    {% endfor %}
+    <div>Издатель: {{ book.publisher.name }}</div>
+    <div>Год публикации: {{ book.YearOfPublishing }}</div>
+
+    <form action="{{ path('book_delete', {id: book.id}) }}" method="POST">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <button type="submit" class="btn btn-danger mt-3">Удалить книгу</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Authors{% endblock %}
+
+{% block content %}
+    <h1>Авторы</h1>
+    <a href="{{ path('author_create') }}" class="btn btn-success mb-3">Добавить автора</a>
+    <div class="mb-3">
+        {% for author in authors %}
+            <h2><a href="{{ path('author_show', { 'id': author.id }) }}">{{ author.LastName }}</a></h2>
+        {% endfor %}
+    </div>
+{% endblock %}

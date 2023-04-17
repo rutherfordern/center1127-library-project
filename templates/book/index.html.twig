@@ -1,0 +1,31 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block content %}
+    <h1>Список книг</h1>
+    <a href="{{ path('book_create') }}" class="btn btn-success mb-3">Создать книгу</a>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-nowrap">
+            <thead class="table-light">
+            <tr>
+                <th>Название книги</th>
+                <th>Год публикации</th>
+                <th>Автор</th>
+                <th>Издатель</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td><a href="{{ path('book_show', { 'id': book.id }) }}">{{ book.name }}</a></td>
+                <td> {{ book.YearOfPublishing }} </td>
+                {% for author in book.authors %}
+                <td> {{ author.lastName }} </td>
+                {% endfor %}
+                <td> {{ book.publisher.name }} </td>
+            </tr>
+            {% endfor %}
+            </thead>
+        </table>
+    </div>
+{% endblock %}
