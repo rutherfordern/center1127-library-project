@@ -3,15 +3,12 @@
 namespace App\Controller;
 
 use App\Form\BookType;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Book;
-use App\Entity\Author;
-use App\Entity\Publisher;
 use App\Repository\BookRepository;
 
 class BookController extends AbstractController
