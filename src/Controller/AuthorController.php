@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Author;
-use App\Form\AuthorType;
+use App\Form\Author\AuthorType;
 use App\Repository\AuthorRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -1,5 +1,75 @@
 {% extends 'layouts/app.html.twig' %}
 
 {% block content %}
-    <img src="https://udivitelnimir.com/wp-content/uploads/2021/08/3583.jpg" class="img-fluid" alt="...">
+{#    <div class="container my-3">#}
+{#        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border bg-light">#}
+{#            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">#}
+{#                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Centre 1127 [Bell Labs]</h1>#}
+{#                <p class="lead">История развития информационных технологий в книгах</p>#}
+{#                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">#}
+{#                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="p-5 mb-4 bg-light border rounded-3 pt-lg-5">
+        <div class="container-fluid py-3">
+            <h1 class="display-4 fw-bold lh-1">Centre 1127 [Bell Labs]</h1>
+            <p class="col-md-8 fs-4">История развития информационных технологий в книгах</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Что за 1127?</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-3 mb-4">
+                        <div class="card mr-3">
+                            <img src="{{ asset('images/virtual-museum.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Виртуальный компьютерный музей</h5>
+                                <p class="card-text">Банк данных, связанный с происхождением и развитием вычислительной техники, прежде всего отечественной.</p>
+                                <a href="https://www.computer-museum.ru" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 mb-4">
+                        <div class="card mr-3">
+                            <img src="{{ asset('images/museum-data-art-2.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">IT-музей DataArt</h5>
+                                <p class="card-text">Музей ИТ-компании, где собрано около 400 предметов. Есть интереснейшие истории о развитии отечественного ИТ (целых 6 глав).</p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 mb-4">
+                        <div class="card mr-3">
+                            <img src="{{ asset('images/arzamas-material.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Советская кибернетика в историях и картинках</h5>
+                                <p class="card-text">Материал от проекта Arzamas о том, как кибернетика и ЭВМ стали важной частью советской жизни и культуры.</p>
+                                <a href="https://arzamas.academy/special/cybernetics" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3 mb-4">
+                        <div class="card mr-3">
+                            <img src="https://themesberg.s3.us-east-2.amazonaws.com/public/posts/bootstrap-themes-summer-sale.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">The National Museum of Computing</h5>
+                                <p class="card-text">Увлекательная виртуальная прогулка по Национальному музею вычислительной техники в Блетчли-Парк.</p>
+                                <a href="https://my.matterport.com/show/?m=Vz8kCqGRjQA" class="btn btn-primary">Перейти</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ include('partials/footer.html.twig') }}
 {% endblock %}

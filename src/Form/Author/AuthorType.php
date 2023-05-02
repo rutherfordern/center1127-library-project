@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Author;
 
 use App\Entity\Author;
 use Symfony\Component\Form\AbstractType;

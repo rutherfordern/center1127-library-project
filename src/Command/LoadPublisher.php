@@ -15,8 +15,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class LoadPublisher extends Command
 {
-    protected static $defaultName = 'load-publisher';
-
     private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
@@ -25,12 +23,7 @@ class LoadPublisher extends Command
         $this->entityManager = $entityManager;
     }
 
-    protected function configure()
-    {
-        $this->setDescription('Loads data Publisher into the database');
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $publisher1 = new Publisher();
         $publisher1->setName('OReilly');

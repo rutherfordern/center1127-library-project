@@ -17,8 +17,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class LoadBook extends Command
 {
-    protected static $defaultName = 'load-book';
-
     private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)

@@ -15,8 +15,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class LoadAuthor extends Command
 {
-    protected static $defaultName = 'load-author';
-
     private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)

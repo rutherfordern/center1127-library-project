@@ -1,31 +1,34 @@
 {% extends 'layouts/app.html.twig' %}
 
-{% block title %}Books{% endblock %}
+{% block title %} Books {% endblock %}
 
 {% block content %}
-    <h1>Список книг</h1>
-    <a href="{{ path('book_create') }}" class="btn btn-success mb-3">Создать книгу</a>
-
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover text-nowrap">
-            <thead class="table-light">
-            <tr>
-                <th>Название книги</th>
-                <th>Год публикации</th>
-                <th>Автор</th>
-                <th>Издатель</th>
-            </tr>
-            {% for book in books %}
-            <tr>
-                <td><a href="{{ path('book_show', { 'id': book.id }) }}">{{ book.name }}</a></td>
-                <td> {{ book.YearOfPublishing }} </td>
-                {% for author in book.authors %}
-                <td> {{ author.lastName }} </td>
-                {% endfor %}
-                <td> {{ book.publisher.name }} </td>
-            </tr>
-            {% endfor %}
-            </thead>
-        </table>
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-secondary rounded shadow-sm">
+        <div class="lh-1">
+            <h1 class="h2 mb-0 text-white lh-1">Книги</h1>
+        </div>
     </div>
+    <div class="row mb-2">
+        {% for book in booksPagination %}
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">{{ book.name }}</h3>
+                    {% for author in book.authors %}
+                    <div class="mb-0 text-body-secondary">{{ author.lastName }}</div>
+                    {% endfor %}
+                    <div class="mb-3 text-body-secondary">{{ book.publisher.name }}</div>
+                    {# <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p> #}
+                    <a href="{{ path('book_show', { 'id': book.id }) }}" class="stretched-link">Перейти к книге</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="navigation">
+            {{ knp_pagination_render(booksPagination) }}
+        </div>
+    </div>
+
+    {{ include('partials/footer.html.twig') }}
 {% endblock %}

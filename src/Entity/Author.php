@@ -17,10 +17,12 @@ class Author
     private int $id;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private string $first_name;
 
     #[ORM\Column(length: 255)]
-    protected string $last_name;
+    #[Assert\NotBlank]
+    private string $last_name;
 
     #[ORM\ManyToMany(targetEntity: Book::class, inversedBy: 'authors')]
     private Collection $books;

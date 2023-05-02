@@ -21,6 +21,11 @@ class Book
     private string $name;
 
     #[ORM\Column]
+    #[Assert\Range(
+        min: 800,
+        max: 'now',
+        notInRangeMessage: 'Некорректный год издания',
+    )]
     private int $year_of_publishing;
 
     #[ORM\ManyToMany(targetEntity: Author::class, mappedBy: 'books')]
@@ -34,7 +39,7 @@ class Book
         $this->authors = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -90,12 +95,12 @@ class Book
         return $this;
     }
 
-    public function getPublisher(): ?Publisher
+    public function getPublisher(): Publisher
     {
         return $this->publisher;
     }
 
-    public function setPublisher(?Publisher $publisher): self
+    public function setPublisher(Publisher $publisher): self
     {
         $this->publisher = $publisher;
 

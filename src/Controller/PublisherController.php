@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Publisher;
-use App\Form\PublisherEditType;
+use App\Form\Publisher\PublisherEditType;
 use App\Repository\PublisherRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
